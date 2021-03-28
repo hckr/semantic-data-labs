@@ -1,0 +1,36 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <foaf:PersonalProfileDocument rdf:about="">
+        <foaf:maker rdf:resource="#JohnDoe"/>
+        <foaf:primaryTopic rdf:resource="#JohnDoe"/>
+    </foaf:PersonalProfileDocument>
+    <foaf:Person rdf:ID="#JohnDoe">
+        <foaf:name xml:lang="en">John Doe</foaf:name>
+        <foaf:title>Mr</foaf:title>
+        <foaf:givenname>John</foaf:givenname>
+        <foaf:family_name>Doe</foaf:family_name>
+        <foaf:nick>Johnny</foaf:nick>
+        <foaf:mbox>mailto:john.doe@mail.com</foaf:mbox>
+        <foaf:mbox_sha1sum>676f0e497faf69d1a01af8b3ce57f8326af234ef</foaf:mbox_sha1sum>
+        <foaf:workplaceHomepage rdf:resource="https://www.workplace.com"/>
+        <foaf:workInfoHomepage rdf:resource="https://work.info"/>
+        <foaf:schoolHomepage rdf:resource="https://school.edu"/>
+        <foaf:knows>
+            <foaf:Person>
+                <foaf:name>Jane Doe</foaf:name>
+                <foaf:mbox>mailto:jane.doe@mail.com</foaf:mbox>
+                <foaf:mbox_sha1sum>6a1163c9b393ac6ad64760dd8e46969d3a4c060f</foaf:mbox_sha1sum>
+                <rdfs:seeAlso rdf:resource="#JaneDoe"/>
+            </foaf:Person>
+        </foaf:knows>
+        <foaf:knows>
+            <foaf:Person>
+                <foaf:name>Richard Roe</foaf:name>
+                <foaf:mbox>mailto:richard.roe@mail.com</foaf:mbox>
+                <foaf:mbox_sha1sum>2ec467671f24fb137c7d9ccc968163d173c6bff8</foaf:mbox_sha1sum>
+                <rdfs:seeAlso rdf:resource="#RichardRoe"/>
+            </foaf:Person>
+        </foaf:knows>
+    </foaf:Person>
+</rdf:RDF>

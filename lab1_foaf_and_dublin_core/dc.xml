@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title>JavaScript – mocne strony</dc:title>
+    <dc:creator>Douglas Crockford</dc:creator>
+    <dc:subject>https://schema.org/ComputerLanguage</dc:subject>
+    <dc:description>Książka o mocnych stronach języka JavaScript</dc:description>
+    <dc:publisher>Helion</dc:publisher>
+    <dc:date>2009</dc:date>
+    <dc:format>http://purl.org/dc/terms/PhysicalMedium</dc:format>
+    <dc:type>http://purl.org/dc/dcmitype/Text</dc:type>
+    <dc:identifier>978-83-246-1998-6</dc:identifier>
+    <dc:language>pl</dc:language>
+</metadata>
