@@ -1,0 +1,64 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prop: <https://www.wikidata.org/wiki/Property:> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# P31 - instance of
+# P144 - based on
+# P178 - developer
+# P277 - programming language
+# P287 - designed by
+# P361 - part of
+# P527 - has part
+# P4428 – implementation of
+
+<https://en.wikipedia.org/wiki/Programming_language> a rdfs:Class .
+
+<https://en.wikipedia.org/wiki/Brendan_Eich> a foaf:Person .
+
+<https://en.wikipedia.org/wiki/Dennis_Ritchie> a foaf:Person .
+
+<https://en.wikipedia.org/wiki/Guido_van_Rossum> a foaf:Person .
+
+<https://en.wikipedia.org/wiki/JavaScript>
+    prop:P31 <https://en.wikipedia.org/wiki/Programming_language> ;
+    prop:P287 <https://en.wikipedia.org/wiki/Brendan_Eich> .
+
+<https://en.wikipedia.org/wiki/C_(programming_language)>
+    prop:P31 <https://en.wikipedia.org/wiki/Programming_language> ;
+    prop:P287 <https://en.wikipedia.org/wiki/Dennis_Ritchie> ;
+    prop:P144 <https://en.wikipedia.org/wiki/B_(programming_language)> .
+
+<https://en.wikipedia.org/wiki/B_(programming_language)>
+    prop:P31 <https://en.wikipedia.org/wiki/Programming_language> .
+
+<https://en.wikipedia.org/wiki/Python_(programming_language)>
+    prop:P31 <https://en.wikipedia.org/wiki/Programming_language> ;
+    prop:P287 <https://en.wikipedia.org/wiki/Guido_van_Rossum> ;
+    prop:P277 <https://en.wikipedia.org/wiki/C_(programming_language)> .
+
+<https://en.wikipedia.org/wiki/SpiderMonkey>
+    prop:P4428 <https://en.wikipedia.org/wiki/JavaScript> ;
+    prop:P361 <https://en.wikipedia.org/wiki/Firefox> .
+
+<https://en.wikipedia.org/wiki/Firefox>
+    prop:P31 <https://en.wikipedia.org/wiki/Web_browser> .
+
+<https://en.wikipedia.org/wiki/V8_(JavaScript_engine)>
+    prop:P4428 <https://en.wikipedia.org/wiki/JavaScript> ;
+    prop:P361 <https://en.wikipedia.org/wiki/Google_Chrome> .
+
+<https://en.wikipedia.org/wiki/Google_Chrome>
+    prop:P31 <https://en.wikipedia.org/wiki/Web_browser> .
+
+<https://en.wikipedia.org/wiki/CPython>
+    prop:P4428 <https://en.wikipedia.org/wiki/Python_(programming_language)> ;
+    prop:P178 <https://en.wikipedia.org/wiki/Guido_van_Rossum> ;
+    prop:P277 <https://en.wikipedia.org/wiki/C_(programming_language)> .
+
+<https://en.wikipedia.org/wiki/Blender_(software)>
+    prop:P31 <https://en.wikipedia.org/wiki/3D_modeling_software> ;
+    prop:P527 <https://en.wikipedia.org/wiki/CPython> .
+
+<https://en.wikipedia.org/wiki/Web_browser> a rdfs:Class .
+
+<https://en.wikipedia.org/wiki/3D_modeling_software> a rdfs:Class .

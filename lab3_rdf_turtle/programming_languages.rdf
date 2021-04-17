@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:ns0="https://www.wikidata.org/wiki/Property:">
+
+  <rdfs:Class rdf:about="https://en.wikipedia.org/wiki/Programming_language">
+  </rdfs:Class>
+
+  <foaf:Person rdf:about="https://en.wikipedia.org/wiki/Brendan_Eich">
+  </foaf:Person>
+
+  <foaf:Person rdf:about="https://en.wikipedia.org/wiki/Dennis_Ritchie">
+  </foaf:Person>
+
+  <foaf:Person rdf:about="https://en.wikipedia.org/wiki/Guido_van_Rossum">
+  </foaf:Person>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/JavaScript">
+    <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Programming_language"/>
+    <ns0:P287 rdf:resource="https://en.wikipedia.org/wiki/Brendan_Eich"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/C_(programming_language)">
+    <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Programming_language"/>
+    <ns0:P287 rdf:resource="https://en.wikipedia.org/wiki/Dennis_Ritchie"/>
+    <ns0:P144>
+      <rdf:Description rdf:about="https://en.wikipedia.org/wiki/B_(programming_language)">
+        <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Programming_language"/>
+      </rdf:Description>
+    </ns0:P144>
+
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Python_(programming_language)">
+    <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Programming_language"/>
+    <ns0:P287 rdf:resource="https://en.wikipedia.org/wiki/Guido_van_Rossum"/>
+    <ns0:P277 rdf:resource="https://en.wikipedia.org/wiki/C_(programming_language)"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/SpiderMonkey">
+    <ns0:P4428 rdf:resource="https://en.wikipedia.org/wiki/JavaScript"/>
+    <ns0:P361>
+      <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Firefox">
+        <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Web_browser"/>
+      </rdf:Description>
+    </ns0:P361>
+
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">
+    <ns0:P4428 rdf:resource="https://en.wikipedia.org/wiki/JavaScript"/>
+    <ns0:P361>
+      <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Google_Chrome">
+        <ns0:P31 rdf:resource="https://en.wikipedia.org/wiki/Web_browser"/>
+      </rdf:Description>
+    </ns0:P361>
+
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/CPython">
+    <ns0:P4428 rdf:resource="https://en.wikipedia.org/wiki/Python_(programming_language)"/>
+    <ns0:P178 rdf:resource="https://en.wikipedia.org/wiki/Guido_van_Rossum"/>
+    <ns0:P277 rdf:resource="https://en.wikipedia.org/wiki/C_(programming_language)"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Blender_(software)">
+    <ns0:P31>
+      <rdfs:Class rdf:about="https://en.wikipedia.org/wiki/3D_modeling_software">
+      </rdfs:Class>
+    </ns0:P31>
+
+    <ns0:P527 rdf:resource="https://en.wikipedia.org/wiki/CPython"/>
+  </rdf:Description>
+
+  <rdfs:Class rdf:about="https://en.wikipedia.org/wiki/Web_browser">
+  </rdfs:Class>
+
+</rdf:RDF>
