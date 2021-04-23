@@ -139,6 +139,61 @@ ORDER BY ?organizationLabel
 
 ([see in Wikidata Query Service](https://w.wiki/3CkT))
 
+### Movies
+
+#### Facts true for all given movies
+
+```sparql
+SELECT ?predicate ?predName ?object ?objName ?objDesc {
+  wd:Q185888 ?predicate ?object . # The Social Network (2010)
+  wd:Q212792 ?predicate ?object . # Bolt (2008)
+  wd:Q83495 ?predicate ?object . # The Matrix (1999)
+  
+  ?predicateobj wikibase:directClaim ?predicate . # mapping between wd:* and wdt:*
+  ?predicateobj rdfs:label ?predName FILTER(LANG(?predName) = "en") .
+  ?object rdfs:label ?objName FILTER(LANG(?objName) = "en") .
+  ?object schema:description ?objDesc FILTER(LANG(?objDesc) = "en") .
+}
+```
+
+([see in Wikidata Query Service](https://w.wiki/3EDU))
+
+#### Facts different for given movies
+
+(properties of each which aren't shared by the other two; this might be heavily over-engineered)
+
+```sparql
+SELECT DISTINCT
+  ?predicate ?predDesc
+  (GROUP_CONCAT(DISTINCT ?TheSocialNetworkValueName; SEPARATOR=", ") AS ?TheSocialNetworkValueNames)
+  (GROUP_CONCAT(DISTINCT ?BoltValueName; SEPARATOR=", ") AS ?BoltValueNames)
+  (GROUP_CONCAT(DISTINCT ?TheMatrixValueName; SEPARATOR=", ") AS ?TheMatrixValueNames)
+{
+  wd:Q185888 ?predicate ?TheSocialNetworkValue
+    FILTER NOT EXISTS { wd:Q185888 ?predicate ?BoltValue }
+    FILTER NOT EXISTS { wd:Q185888 ?predicate ?TheMatrixValue } .
+  
+  wd:Q212792 ?predicate ?BoltValue
+    FILTER NOT EXISTS { wd:Q212792 ?predicate ?TheSocialNetworkValue }
+    FILTER NOT EXISTS { wd:Q212792 ?predicate ?TheMatrixValue } .
+  
+  wd:Q83495 ?predicate ?TheMatrixValue
+    FILTER NOT EXISTS { wd:Q83495 ?predicate ?TheSocialNetworkValue }
+    FILTER NOT EXISTS { wd:Q83495 ?predicate ?BoltValue } .
+  
+  ?predicateobj wikibase:directClaim ?predicate . # mapping between wd:* and wdt:*
+  ?predicateobj rdfs:label ?predDesc FILTER(LANG(?predDesc) = "en") .
+  
+  ?TheSocialNetworkValue rdfs:label ?TheSocialNetworkValueName FILTER(LANG(?TheSocialNetworkValueName) = "en") .
+  ?BoltValue rdfs:label ?BoltValueName FILTER(LANG(?BoltValueName) = "en") .
+  ?TheMatrixValue rdfs:label ?TheMatrixValueName FILTER(LANG(?TheMatrixValueName) = "en") .
+}
+GROUP BY ?predicate ?predDesc
+LIMIT 5
+```
+
+([see in Wikidata Query Service](https://w.wiki/3EDh))
+
 ### Programming languages
 
 #### Programming languages designed by Brendan Eich
