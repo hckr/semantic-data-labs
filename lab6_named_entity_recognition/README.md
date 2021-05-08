@@ -12,23 +12,23 @@ poetry install
 
 ## Native
 
-Naive version implemented in [naive.py](naive.py) uses a regex to extract proper names.
+Naive version implemented in [named_entity_recognition/naive.py](named_entity_recognition/naive.py) uses a regex to extract proper names.
 
 ```bash
-poetry run python naive.py
+poetry run python named_entity_recognition/naive.py
 ```
 
-Results are saved to [output/naive.txt](output/naive.txt).
+Results are saved to [named_entity_recognition/output/naive.txt](named_entity_recognition/output/naive.txt).
 
 ## NLTK
 
-Version implemented in [using_nltk.py](using_nltk.py) uses NLTK's word tokenizer, part of speech tagger, and finally named entities chunker.
+Version implemented in [named_entity_recognition/using_nltk.py](named_entity_recognition/using_nltk.py) uses NLTK's word tokenizer, part of speech tagger, and finally named entities chunker.
 
 ```bash
-poetry run python using_nltk.py
+poetry run python named_entity_recognition/using_nltk.py
 ```
 
-Results are saved to [output/naive.txt](output/nltk.txt).
+Results are saved to [named_entity_recognition/output/naive.txt](named_entity_recognition/output/nltk.txt).
 
 ### Initial setup
 
@@ -50,20 +50,20 @@ $ poetry run python
 
 ## Tag with Wikidata (SPARQL)
 
-Named entites found with NLTK are annotated with what they are instances of accorcing to Wikidata, see implementation in [tag_with_wikidata_sparql.py](tag_with_wikidata_sparql.py).
+Named entites found with NLTK are annotated with what they are instances of accorcing to Wikidata, see implementation in [named_entity_recognition/tag_with_wikidata_sparql.py](named_entity_recognition/tag_with_wikidata_sparql.py).
 
 ```bash
-poetry run python tag_with_wikidata_sparql.py
+poetry run python named_entity_recognition/tag_with_wikidata_sparql.py
 ```
 
-Results are saved to HTML table in [output/tagged_with_wikidata.html](output/tagged_with_wikidata.html).
+Results are saved to HTML table in [named_entity_recognition/output/tagged_with_wikidata.html](named_entity_recognition/output/tagged_with_wikidata.html).
 
 ## Tag with Google Knowledge Graph Search API
 
-Named entites found with NLTK are annotated with what type they are accorcing to Knowledge Graph, see implementation in [tag_with_google_knowledge_graph.py](tag_with_google_knowledge_graph.py). You need to get API key from [here](https://console.cloud.google.com/flows/enableapi?apiid=kgsearch.googleapis.com&credential=client_key).
+Named entites found with NLTK are annotated with what type they are accorcing to Knowledge Graph, see implementation in [named_entity_recognition/tag_with_google_knowledge_graph.py](named_entity_recognition/tag_with_google_knowledge_graph.py). You need to get API key from [here](https://console.cloud.google.com/flows/enableapi?apiid=kgsearch.googleapis.com&credential=client_key).
 
 ```bash
-API_KEY={put your API key here} poetry run python tag_with_google_knowledge_graph.py
+API_KEY={put your API key here} poetry run python named_entity_recognition/tag_with_google_knowledge_graph.py
 ```
 
-Results are saved to HTML table in [output/tagged_with_google_graph.html](tagged_with_google_graph.html).
+Results are saved to HTML table in [named_entity_recognition/output/tagged_with_google_graph.html](named_entity_recognition/output/tagged_with_google_graph.html).

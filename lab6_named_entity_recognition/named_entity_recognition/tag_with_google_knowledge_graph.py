@@ -1,13 +1,12 @@
-from named_entity_recognition.utils import (join_with_newlines, load_list,
-                                            save_text)
 import json
-import time
-import urllib
+import os
 from typing import List, Tuple
 from urllib.parse import quote
 
 import urllib3
-import os
+
+from named_entity_recognition.utils import (join_with_newlines, load_list,
+                                            save_text)
 
 LIMIT = 0
 
@@ -48,7 +47,8 @@ def fetch_classes_from_google(api_key: str, name: str) -> str:
     jsonld = json.loads(response.data)
     classes = set()
     if 'itemListElement' not in jsonld:
-        raise RuntimeError('Incorrect response: ' + json.dumps(jsonld, indent=2))
+        raise RuntimeError('Incorrect response: ' +
+                           json.dumps(jsonld, indent=2))
     for item in jsonld['itemListElement']:
         try:
             for t in item['result']['@type']:
